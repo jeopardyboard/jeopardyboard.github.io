@@ -3,10 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to GitHub Pages</title>
+  <title>Jeopardy Board</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: repeat(6, 150px);
+      grid-gap: 10px;
+      background-color: #000;
+    }
+    .category, .cell {
+      width: 150px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .category {
+      background-color: #ffcc00;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .cell {
+      background-color: #1e90ff;
+      cursor: pointer;
+    }
+    .cell:hover {
+      background-color: #4169e1;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, World!</h1>
-  <p>Welcome to my GitHub Pages site.</p>
+  <div class="board">
+    <!-- Categories -->
+    <div class="category">blacks</div>
+    <div class="category">whites</div>
+    <div class="category">lmao</div>
+    <div class="category">hello</div>
+    <div class="category">wtf</div>
+    <div class="category">gooner</div>
+    <!-- Cells -->
+    <script>
+      for (let i = 0; i < 36; i++) {
+        document.write('<div class="cell" onclick="showClue()">clue for this category</div>');
+      }
+    </script>
+  </div>
+
+  <script>
+    function showClue() {
+      alert('put words here!');
+    }
+  </script>
 </body>
 </html>
